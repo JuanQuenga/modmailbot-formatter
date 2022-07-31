@@ -103,9 +103,7 @@ module.exports = function ({ formats, webserver, config }) {
       if (Object.keys(opts).length === 0 || opts.verbose) {
         // We purposely avoid passing in the verbose flag since we're repurposing
         // it to return the plaintext log instead of the fancy one
-        return plaintextFormatter(thread, threadMessages, {
-          simple: opts.simple,
-        });
+        return plaintextFormatter(thread, threadMessages, opts);
       } else {
         const data = {
           title: `Modmail thread ${thread.thread_number} with ${thread.user_name}`,
